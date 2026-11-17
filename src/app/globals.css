@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-bg: #0A0608;
+  --color-brand-surface: #120A0E;
+  --color-brand-ivory: #FAF7F2;
+  --color-brand-ivory-muted: #A39B94;
+  --color-brand-gold: #D4AF37;
+  --color-brand-gold-light: #E7C96E;
+  --color-brand-gold-dark: #9E7D35;
+  --color-brand-burgundy: #5A111E;
+  --color-brand-burgundy-dark: #380811;
+
+  --font-serif: var(--font-serif), "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-sans), "Inter", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0A0608;
+  --foreground: #FAF7F2;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0A0608;
+  color: #FAF7F2;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Regal Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF0CA 0%, #E7C96E 35%, #D4AF37 70%, #9E7D35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Velvet Burgundy & Gold Ambient Glow */
+.royal-ambient-bg {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(212, 175, 55, 0.12) 0%, rgba(90, 17, 30, 0.08) 35%, transparent 65%),
+    radial-gradient(circle at 20% 80%, rgba(56, 8, 17, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(22, 44, 63, 0.12) 0%, transparent 50%),
+    #0A0608;
 }
